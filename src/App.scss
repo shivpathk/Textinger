@@ -1,0 +1,52 @@
+.app{
+    background-color: #dadbd3;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    @media screen and (max-width:700px) {
+        min-height: 100vh;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin-top: 5rem;
+        flex-direction: column;
+        
+    }
+    .app-body{
+        display: flex;
+        height: 90vh;
+        width: 90vw;
+        background-color: #ededed;
+        box-shadow: -1px 4px 20px -6px rgba(0,0,0,0.2);
+        margin-top: 10px;
+        @media screen and (max-width:700px) {
+            flex-direction: column;
+            min-height: 100vh;
+            height: 100%;
+            margin-top: 2rem;
+            .sidebar{
+                max-height: 500px;
+            }
+            .chat{
+                min-height: 800px;
+                border-top: 3px solid black;
+                margin-top: 1rem;
+            }
+        }
+
+    }
+    .footer{
+        text-align:center;
+        padding: 0.5rem;
+        width: 100%;
+        color: black;
+        @media screen and (max-width:700px){
+            margin-top: 2rem;
+        }
+    }
+    .footer a{
+        color: blue;
+        cursor: pointer;
+    }
+}
