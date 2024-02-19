@@ -6,7 +6,7 @@ import Login from './components/auth/Login';
 import { useStateValue } from './StateProvider';
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
 
   return (
@@ -25,7 +25,7 @@ function App() {
         </div>
       )}
           <div>
-            <p className="footer">Copyright © 2024 Created by <a href="https://shiv-pathk-portfolio.netlify.app/" target="_blank">Shivam</a> </p>
+            <p className="footer">Copyright © 2024 Created by <a href="https://shivpathk-portfolio.netlify.app/" rel="noreferrer" target="_blank">Shivam</a> </p>
           </div>
     </div>
   );
