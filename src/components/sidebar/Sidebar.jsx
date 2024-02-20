@@ -29,7 +29,7 @@ const Sidebar = () => {
     return <div className="sidebar">
         <div className="sidebar-header">
             <Avatar src={user?.photoURL}/>
-            <h1>{(user?.displayName).split(" ")[0]}</h1>
+            <h1 className="sidebar-header-user">{(user?.displayName).split(" ")[0]}</h1>
             <div className="sidebar-header-right">
                 <IconButton>
                     <DonutLargeIcon />
@@ -46,7 +46,7 @@ const Sidebar = () => {
         <div className="sidebar-search">
             <div className="sidebar-search-container">
                 <SearchOutlined />
-                <input placeholder="Search or start new chat" type="text" />
+                <input placeholder="Search room or add new room" type="text" />
 
             </div>
         </div>

@@ -44,6 +44,7 @@ const Chat = () => {
     set(chatRef, {
       message: input,
       name: (user?.displayName).split(" ")[0],
+      email:user?.email,
       timestamp: serverTimestamp(),
     })
     setInput("");
@@ -73,7 +74,7 @@ const Chat = () => {
 
     <div className="chat-body">
       {messages.map((message) => (<>  {message.id[1].message &&
-        <div className={`chat-body-message ${message.id[1].name === (user?.displayName).split(" ")[0] && "chat-sender"}`}>
+        <div className={`chat-body-message ${message.id[1].email === user?.email && "chat-sender"}`}>
           <p className="name">
             ~{message.id[1].name}
           </p>

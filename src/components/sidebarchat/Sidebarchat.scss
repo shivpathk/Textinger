@@ -20,5 +20,15 @@
             margin-bottom: 5px;
         }
     }
-
+    
+}
+.add-button{
+    align-items: center;
+    justify-content: center;
+    h2{
+        font-size: 18px;
+        background-color: rgba(0, 255, 255, 0.37);
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
 }

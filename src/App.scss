@@ -26,12 +26,14 @@
             height: 100%;
             margin-top: 2rem;
             .sidebar{
-                max-height: 500px;
+                max-height: 400px;
             }
             .chat{
-                min-height: 800px;
+                min-height: 200px;
+                max-height: 550px;
                 border-top: 3px solid black;
                 margin-top: 1rem;
+                overflow-y: scroll;
             }
         }
 

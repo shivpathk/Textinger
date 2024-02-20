@@ -30,7 +30,7 @@ const Sidebarchat = ({id, name ,addNewChat}) => {
   },[])
 
   const createChat = ()=>{
-    const roomName = prompt("Please Enter Name for Chat room")
+    const roomName = prompt("Please Enter Name for Room")
 
     if(roomName){
       set(ref(db,"rooms/" + Date.now()),{
@@ -46,13 +46,13 @@ const Sidebarchat = ({id, name ,addNewChat}) => {
     <Avatar src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${seed}`}/>
     <div className="sidebarchat-info">
       <h2>{name}</h2>
-      <p>{messages[messages.length-2]?.idl[1].message}</p>
+      <p>{messages[messages.length-2]?.idl[1].message && (messages[messages.length-2]?.idl[1].message)?.substring(0, 25)+'...'}</p>
     </div>
   </div>
   
   ):(
-    <div onClick={createChat} className="sidebarchat">
-      <h2>Add new Chat</h2>
+    <div onClick={createChat} className="sidebarchat add-button">
+      <h2>Add New Room</h2>
     </div>
   )
 };

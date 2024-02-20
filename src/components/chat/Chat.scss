@@ -69,6 +69,7 @@
             flex-wrap: wrap;
             border-radius: 8px;
             margin-bottom: 5px;
+            // overflow: hidden;
             .name{
                 position: absolute;
                 top: 0;
@@ -80,6 +81,8 @@
             .message{
                 padding: 12px 60px 15px 10px ;
                 font-size: 18px;
+                max-width: 47vw;
+                overflow-wrap: break-word;
             }
             .time{
                 position: absolute;
