@@ -42,23 +42,27 @@
             .MuiSvgIcon-root {
                 padding: 10px;
                 font-size: 30px !important;
+
                 @media screen and (max-width:700px) {
-                    padding: 2px;
-                    
+                    font-size: 25px !important;
+                    padding: 0px;
+
                 }
             }
 
         }
     }
-    .chat-body{
+
+    .chat-body {
         flex: 1;
         background: linear-gradient(rgba(244, 244, 244, 0.7), rgba(244, 243, 243, 0.7)),
-        url("https://img.freepik.com/free-vector/vector-social-contact-seamless-pattern-white-blue_1284-41919.jpg?w=740&t=st=1708239079~exp=1708239679~hmac=86088e37b2aad684735107d1bed60cdf0beba1abe839d7ec5b5460943f74b9f6");
+            url("https://img.freepik.com/free-vector/vector-social-contact-seamless-pattern-white-blue_1284-41919.jpg?w=740&t=st=1708239079~exp=1708239679~hmac=86088e37b2aad684735107d1bed60cdf0beba1abe839d7ec5b5460943f74b9f6");
         background-repeat: repeat;
         background-position: center;
         padding: 30px;
         overflow-y: scroll;
-        .chat-body-message{
+
+        .chat-body-message {
             position: relative;
             display: flex;
             justify-content: space-between;
@@ -69,22 +73,24 @@
             flex-wrap: wrap;
             border-radius: 8px;
             margin-bottom: 5px;
+
             // overflow: hidden;
-            .name{
+            .name {
                 position: absolute;
                 top: 0;
                 font-size: 13px;
                 color: blue;
                 cursor: pointer;
             }
-            
-            .message{
-                padding: 12px 60px 15px 10px ;
+
+            .message {
+                padding: 12px 60px 15px 10px;
                 font-size: 18px;
                 max-width: 47vw;
                 overflow-wrap: break-word;
             }
-            .time{
+
+            .time {
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -93,44 +99,71 @@
                 padding: 10px;
             }
         }
-        .chat-sender{
+
+        .chat-sender {
             margin-left: auto;
             background-color: #dcf8c8;
-            .name{
+
+            .name {
                 display: none;
             }
-            .message{
+
+            .message {
                 margin-top: -10px;
             }
         }
     }
 
-    .chat-footer{
+    .chat-footer {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         height: 62px;
+        width: 100%;
         border-top: 1px solid lightgray;
-        form{
-            flex: 1;
+        align-items: center;
+
+        form {
             display: flex;
-            input{
-                flex: 1;
+            padding: 5px;
+            width: 99%;
+            height: 70%;
+
+            @media screen and (max-width:700px) {
+                margin-top: 12px;
+            }
+            
+            input {
                 border-radius: 10px;
                 padding: 10px;
                 border: none;
+                margin: 0 2px;
+                width: 80%;
+
             }
-            button{
-                display: none;
+            button {
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                padding: 0px 12px ;
+                margin-left: 12px;
+                background-color: rgba(0, 255, 255, 0.37);
+                font-size: 16px;
+                font-weight: 600;
+                @media screen and (max-width:700px) {
+                    font-size: 13px;
+                    font-weight: 600;
+                    
+                }
+
+            }
+            .MuiSvgIcon-root {
+                padding: 10px;
+                font-size: 30px !important;
+                @media screen and (max-width:700px) {
+                    font-size: 25px !important;
+                    padding: 5px;
+                }
             }
         }
-        .MuiSvgIcon-root {
-            padding: 10px;
-            font-size: 30px !important;
-            @media screen and (max-width:700px) {
-                padding: 2px;
-                
-            }
-        }
+
     }
 }

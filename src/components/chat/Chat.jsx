@@ -5,7 +5,7 @@ import { AttachFile, InsertEmoticon, Mic, MoreVert } from "@mui/icons-material";
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import VideoCallOutlinedIcon from '@mui/icons-material/VideoCallOutlined';
 import { useParams } from "react-router-dom";
-import { ref, onValue, push, set, serverTimestamp, query, onChildAdded, orderByChild } from "firebase/database";
+import { ref, onValue, push, set, serverTimestamp, query, orderByChild } from "firebase/database";
 import db from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 
@@ -25,11 +25,11 @@ const Chat = () => {
         setRoomName(snapshot.val());
       });
     }
-      const chatlistRef = query(ref(db, `rooms/${roomId}`),orderByChild('timestamp'))
-      onValue(chatlistRef,(snapshot)=>{
-        const chatdata = snapshot.val()
-        const chatArray = chatdata ? Object.entries(chatdata).map((id,chat)=>({id,...chat})) : []
-        setMessages(chatArray)
+    const chatlistRef = query(ref(db, `rooms/${roomId}`), orderByChild('timestamp'))
+    onValue(chatlistRef, (snapshot) => {
+      const chatdata = snapshot.val()
+      const chatArray = chatdata ? Object.entries(chatdata).map((id, chat) => ({ id, ...chat })) : []
+      setMessages(chatArray)
     })
   }, [roomId])
 
@@ -44,7 +44,7 @@ const Chat = () => {
     set(chatRef, {
       message: input,
       name: (user?.displayName).split(" ")[0],
-      email:user?.email,
+      email: user?.email,
       timestamp: serverTimestamp(),
     })
     setInput("");
@@ -89,19 +89,14 @@ const Chat = () => {
     </div>
 
     <div className="chat-footer">
-      <IconButton>
-        <InsertEmoticon />
-      </IconButton>
-      <IconButton>
-        <AttachFile />
-      </IconButton>
       <form>
-        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message" type="text" />
-        <button onClick={sendMessage} type="submit">Send message</button>
+        <InsertEmoticon />
+        <AttachFile />
+        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message" type="textarea" />
+        <button onClick={sendMessage} type="submit">Send</button>
+        <Mic />
       </form>
-      <Mic />
     </div>
-
   </div>;
 };
 
